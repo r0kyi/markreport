@@ -4,8 +4,9 @@ from plugins import install_references_list
 parser = argparse.ArgumentParser(description="Convert Markdown to DOCX or HTML with paper format.")
 parser.add_argument("input_file", type=str, help="markdown file path for converting")
 parser.add_argument("--output", type=str, default="", help="output filename")
-parser.add_argument("--format", type=str, choices=["html", "docx"], default="html", help="output format")
+parser.add_argument("--format", type=str, choices=["html", "docx"], default="docx", help="output format")
 parser.add_argument("--docx-base-file", type=str, default="default.docx", help="provide docx base style and framework")
+parser.add_argument("--references", type=str, choices=["yes", "no"], default="no", help="references")
 args = parser.parse_args()
 
 
@@ -26,7 +27,8 @@ if args.format == "docx":
     from docxConvertor import DOCXConvertor
 
     docx = DOCXConvertor(args.docx_base_file)
-    install_references_list(docx.md)
+    if args.format == "yes":
+        install_references_list(docx.md)
     data = open(args.input_file, encoding="utf-8").read()
     docx.read(data)
     docx.save(output_file_name())
@@ -34,7 +36,8 @@ elif args.format == "html":
     from htmlConvertor import HTMLConvertor
 
     html = HTMLConvertor()
-    install_references_list(html.md)
+    if args.format == "yes":
+        install_references_list(html.md)
     data = open(args.input_file, encoding="utf-8").read()
     html.read(data)
     html.save(output_file_name())

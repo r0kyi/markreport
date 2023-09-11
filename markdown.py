@@ -754,6 +754,7 @@ class MarkdownConfig:
         @staticmethod
         def default() -> MarkdownConfig.ImageLabel:
             self = MarkdownConfig.ImageLabel()
+            self.font_size = 12
             self.alignment = "center"
             return self
 
@@ -789,6 +790,7 @@ class MarkdownConfig:
         @staticmethod
         def default() -> MarkdownConfig.TableLabel:
             self = MarkdownConfig.TableLabel()
+            self.font_size = 12
             self.alignment = "center"
             return self
 
@@ -819,6 +821,7 @@ class MarkdownConfig:
         @staticmethod
         def default() -> MarkdownConfig.TableCell:
             self = MarkdownConfig.TableCell()
+            self.font_size = 12
             self.border_width = 1
             self.border_style = "solid"
             self.border_color = "black"
@@ -836,6 +839,7 @@ class MarkdownConfig:
         @staticmethod
         def default() -> MarkdownConfig.TableHeadCell:
             self = MarkdownConfig.TableHeadCell()
+            self.font_size = 12
             self.bold = True
             self.border_width = 1
             self.border_style = "solid"
@@ -874,6 +878,7 @@ class MarkdownConfig:
         @staticmethod
         def default() -> MarkdownConfig.CodeLabel:
             self = MarkdownConfig.CodeLabel()
+            self.font_size = 12
             self.alignment = "center"
             return self
 

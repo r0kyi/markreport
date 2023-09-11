@@ -146,6 +146,7 @@ code:
   format: "代码{gi} {text}"
   show_line_numbers: false
 codeLabel:
+  font_size: 12
   alignment: center
 codeSpan:
   background: "#e3e6e8"
@@ -174,6 +175,7 @@ image:
   display: block
   format: "图{gi} {text}"
 imageLabel:
+  font_size: 12
   alignment: center
 imageRef:
   format: "图{gi}"
@@ -187,15 +189,18 @@ table:
   border_width: 1
   format: "表{gi} {text}"
 tableCell:
+  font_size: 12
   border_color: black
   border_style: solid
   border_width: 1
 tableHeadCell:
+  font_size: 12
   bold: true
   border_color: black
   border_style: solid
   border_width: 1
 tableLabel:
+  font_size: 12
   alignment: center
 tableRef:
   format: "表{gi}"
